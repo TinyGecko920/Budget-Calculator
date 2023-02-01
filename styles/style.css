@@ -31,7 +31,6 @@ main {
 aside {
     background-color: #E8F3FC;
     color: #4B4545;
-    height: 100vh;
     width: 10%;
 }
 
@@ -68,4 +67,22 @@ footer {
 .info-box p {
     color: #4B4545;
     font-size: 1.5em;
+}
+
+#careerList {
+    list-style: none;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+#careerList h2,
+#careerList li {
+    margin: 0.75vh 0.5vw 0 0.5vw;
+}
+
+.searchBar {
+    background-color: white;
+    border: rgba(0, 0, 0, 20%) 1px solid;
+    padding: 0.5vh 0;
+    width: 80%;
 }
