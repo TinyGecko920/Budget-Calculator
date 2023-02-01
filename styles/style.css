@@ -57,7 +57,7 @@ footer {
     color: #0055A5;
 }
 
-.info-box span {
+.info-box input {
     background-color: #FFFFFF;
     border: rgba(0, 0, 0, 20%) 1px solid;
     display: inline-block;
@@ -69,18 +69,18 @@ footer {
     font-size: 1.5em;
 }
 
-#careerList {
+#career-list {
     list-style: none;
     overflow: hidden;
     overflow-y: scroll;
 }
 
-#careerList h2,
-#careerList li {
+#career-list h2,
+#career-list li {
     margin: 0.75vh 0.5vw 0 0.5vw;
 }
 
-.searchBar {
+.search-bar {
     background-color: white;
     border: rgba(0, 0, 0, 20%) 1px solid;
     padding: 0.5vh 0;

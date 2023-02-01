@@ -72,7 +72,9 @@ const careers = [
     [ 'Wind Energy Technician', 56700 ]
 ]
 
-const careerList = document.getElementById("careerList");
+const careerList = document.getElementById("career-list");
+const selectedCareer = document.getElementById("selected-career");
+const grossAnnualIncome = document.getElementById("gross-annual-income")
 
 // Listing careers on page
 for(let career of careers) {
