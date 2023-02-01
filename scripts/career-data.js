@@ -1,10 +1,13 @@
 /*
     IN ORDER TO USE THE DATA IN YOUR PROJECT, Initialize it like so:
 
-    const data = require('./EECU-data.js).data;
+    import { data } from "./EECU-data.js";
 
-    This is only an example. The variable name, variable type (const, let, var), and the require path
-    can all be changed to suit your needs.
+    Then make sure that your script is a module in the html like so:
+
+    <script src="./your-source-here" type="module"></script>
+
+    You can then use the "data" variable in your code.
 
     Credit: Jacob Velasquez
 */
@@ -20,7 +23,7 @@ const data = [
     [ 'Biologist', 54600 ],
     [ 'Bus Driver', 37800 ],
     [ 'Business Development Officer', 54600 ],
-    [ 'Business Manager', 61950 ],
+    [ 'Business Manager Hotel etc.', 61950 ],
     [ 'CNC Manufacturing', 80850 ],
     [ 'Carpenter', 47250 ],
     [ 'Chef', 52500 ],
@@ -80,7 +83,7 @@ const data = [
     [ 'UPS/Fed Ex Driver', 68250 ],
     [ 'Veterinarian', 82950 ],
     [ 'Welder/Metal Specialist', 47250 ],
-    [ 'Wind EnergyTechnician', 56700 ]
+    [ 'Wind Energy Technician', 56700 ]
 ]
 
-exports.data = data
+export { data }

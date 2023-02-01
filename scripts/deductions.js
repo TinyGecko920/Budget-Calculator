@@ -18,4 +18,4 @@ const data = [
     [ "Medical Insurance", 180, "-" ],
 ]
 
-exports.data = data
+export { data }
