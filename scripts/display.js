@@ -1,18 +1,4 @@
-/*
-    IN ORDER TO USE THE DATA IN YOUR PROJECT, Initialize it like so:
-
-    import { data } from "./EECU-data.js";
-
-    Then make sure that your script is a module in the html like so:
-
-    <script src="./your-source-here" type="module"></script>
-
-    You can then use the "data" variable in your code.
-
-    Credit: Jacob Velasquez
-*/
-
-const data = [
+const careers = [
     // [ Career Name, Average Income ]
     [ 'Accountant', 55650 ],
     [ 'Advance Tractor/Trailer Driver', 53550 ],
@@ -86,4 +72,18 @@ const data = [
     [ 'Wind Energy Technician', 56700 ]
 ]
 
-export { data }
+const careerList = document.getElementById("careerList");
+
+// Listing careers on page
+for(let career of careers) {
+    console.log(career[0]);
+    const listItem = document.createElement("li");
+    const anchor = document.createElement("a");
+    anchor.innerText = career[0];
+    listItem.appendChild(anchor)
+    careerList.appendChild(listItem)
+
+    listItem.className = "listItem"
+    listItem.id = career[0]
+    anchor.href = "#"
+}
