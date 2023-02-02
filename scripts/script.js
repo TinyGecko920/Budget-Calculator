@@ -81,3 +81,30 @@ const deducitons = [
     [ "Retirement Investment", 0.05, "%" ]
     [ "Medical Insurance", 180, "-" ],
 ]
+// Calculator (add, subtract, multiply, divide)
+function calculate(a, b, operator) {
+    try {
+        if(typeof(a) === "number" && typeof(b) === "number") {
+            try {
+                switch(operator) {
+                    case "add":
+                        return(a + b)
+                    case "subtract":
+                        return(a - b)
+                    case "multiply":
+                        return(a * b)
+                    case "divide":
+                        return(a / b)
+                    default:
+                        throw new Error("Opperator passed to function is not valid.")
+                }
+            } catch(err) {
+                console.log(err)
+            }
+        } else {
+            throw new Error("One or more paramaters passed to function are not numbers.")
+        }
+    } catch(err) {
+        console.log(err)
+    }
+ }
