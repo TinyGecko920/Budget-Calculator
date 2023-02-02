@@ -86,3 +86,8 @@ footer {
     padding: 0.5vh 0;
     width: 80%;
 }
+
+#house-image {
+    height: 40vh;
+    object-fit: cover;
+}
