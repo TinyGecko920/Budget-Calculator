@@ -48,7 +48,7 @@ const careers = [
     [ 'Media/Communications', 45150 ],
     [ 'Medical RepairTech.', 52500 ],
     [ 'Military', 55650 ],
-    [ 'Nuse', 66150 ],
+    [ 'Nurse', 66150 ],
     [ 'Nutitionist', 45150 ],
     [ 'Oceanographer', 69300 ],
     [ 'Pastor', 50400 ],
@@ -78,9 +78,24 @@ const deducitons = [
     [ "Social Security", 0.062, "%" ],
     [ "Medicare", 0.0145, "%" ],
     [ "State Disability", 0.01, "%" ],
-    [ "Retirement Investment", 0.05, "%" ]
+    [ "Retirement Investment", 0.05, "%" ],
     [ "Medical Insurance", 180, "-" ],
 ]
+
+const careerList = document.getElementById("career-list");
+
+const selectedCareer = document.getElementById("selected-career");
+const grossAnnualIncome = document.getElementById("gross-annual-income");
+const grossMonthlyIncome = document.getElementById("gross-monthly-income");
+
+const federalTaxes = document.getElementById("federal-taxes");
+const stateTaxes = document.getElementById("state-taxes");
+const socialSecurity = document.getElementById("social-security");
+const medicare = document.getElementById("medicare");
+const stateDisability = document.getElementById("state-disability");
+const retirementInsurance = document.getElementById("retirement-insurance");
+const medicalInsurance = document.getElementById("medical-insurance");
+
 // Calculator (add, subtract, multiply, divide)
 function calculate(a, b, operator) {
     try {
@@ -88,23 +103,58 @@ function calculate(a, b, operator) {
             try {
                 switch(operator) {
                     case "add":
-                        return(a + b)
+                        return(Math.floor(a + b));
                     case "subtract":
-                        return(a - b)
+                        return(Math.floor(a - b));
                     case "multiply":
-                        return(a * b)
+                        return(Math.floor(a * b));
                     case "divide":
-                        return(a / b)
+                        return(Math.floor(a / b));
                     default:
-                        throw new Error("Opperator passed to function is not valid.")
+                        throw new Error("Opperator passed to function is not valid.");
                 }
             } catch(err) {
-                console.log(err)
+                console.log(err);
             }
         } else {
-            throw new Error("One or more paramaters passed to function are not numbers.")
+            throw new Error("One or more paramaters passed to function are not numbers.");
         }
     } catch(err) {
-        console.log(err)
+        console.log(err);
     }
  }
+
+ function test(careerName) {
+    console.log("clicked anchor")
+    selectedCareer.value = careerName
+
+    for(let career of careers) {
+        if(career[0] == careerName) {
+            let gmi = calculate(career[1], 12, "divide");
+
+            grossAnnualIncome.value = career[1];
+            grossMonthlyIncome.value = gmi;
+
+            federalTaxes.value = gmi - calculate(gmi, 0.12, "multiply");
+            stateTaxes.value = gmi - calculate(gmi, 0.07, "multiply");
+            socialSecurity.value = gmi - calculate(gmi, 0.062, "multiply");
+            medicare.value = gmi - calculate(gmi, 0.0145, "multiply");
+            stateDisability.value = gmi - calculate(gmi, 0.01, "multiply");
+            retirementInsurance.value = gmi - calculate(gmi, 0.05, "multiply");
+            medicalInsurance.value = gmi - calculate(gmi, 180, "subtract");
+        }
+    }
+ }
+
+// Listing careers on page
+for(let career of careers) {
+    console.log(career[0]);
+    const listItem = document.createElement("li");
+    listItem.innerText = career[0];
+    careerList.appendChild(listItem);
+
+    listItem.className = "listItem";
+    listItem.id = career[0];
+
+    listItem.addEventListener('click', function() {test(career[0]); }, true);
+}

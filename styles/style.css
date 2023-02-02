@@ -6,6 +6,9 @@
 
 :root { font-family: Arial, Helvetica, sans-serif; }
 
+.full-width { width: 100%; }
+.half-width { width: 45%; }
+
 h1 {
     font-size: 2rem;
     margin-left: 1vw;
@@ -22,7 +25,8 @@ header, footer {
 main {
     align-items: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     float: right;
     padding: 5vh 5vw;
     width: 90%;
@@ -46,11 +50,16 @@ footer {
     flex-direction: column;
     margin-bottom: 5vh;
     padding: 2vh 2vw;
-    width: 100%;
 }
 
 .info-box div, .info-box h2 {
     margin-bottom: 1vh;
+}
+
+.info-box div {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
 }
 
 .info-box h2 {

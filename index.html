@@ -12,10 +12,10 @@
         <h1>Budget Calculator</h1>
     </header>
     <main>
-        <section class="career-info info-box">
+        <section class="career-info info-box half-width">
             <div class="selected-career">
                 <p>Selected Career:</p>
-                <input type="text" value="Career" id="selected-career">
+                <input type="text" value="Career" id="selected-career" readonly>
             </div>
             <div class="gross-annual-income">
                 <p>Gross Annual Income:</p>
@@ -23,48 +23,48 @@
             </div>
             <div class="gross-monthly-income">
                 <p>Gross Montly Income:</p>
-                <input type="number" value="0" id="gross-annual-income">
+                <input type="number" value="0" id="gross-monthly-income">
             </div>
         </section>
-        <section class="pay-period-deductions info-box">
+        <section class="pay-period-deductions info-box half-width">
             <h2>Pay Period Deductions</h2>
             <div class="federal-taxes">
                 <p>Federal Taxes</p>
-                <span class="deduction">%</span>
-                <span class="amount">$</span>
+                <input type="number" value="0" id="federal-taxes">
+                <input type="number" value="0" class="money">
             </div>
             <div class="state-taxes">
                 <p>State Taxes</p>
-                <span class="deduction">%</span>
-                <span class="amount">$</span>
+                <input type="number" value="0" id="state-taxes">
+                <input type="number" value="0" class="money">
             </div>
             <div class="social-security">
                 <p>Social Security</p>
-                <span class="deduction">%</span>
-                <span class="amount">$</span>
+                <input type="number" value="0" id="social-security">
+                <input type="number" value="0" class="money">
             </div>
             <div class="medicare">
                 <p>Medicare</p>
-                <span class="deduction">%</span>
-                <span class="amount">$</span>
+                <input type="number" value="0" id="medicare">
+                <input type="number" value="0" class="money">
             </div>
             <div class="state-disability">
                 <p>State Disability</p>
-                <span class="deduction">%</span>
-                <span class="amount">$</span>
+                <input type="number" value="0" id="state-disability">
+                <input type="number" value="0" class="money">
             </div>
             <div class="retirement-insurance">
                 <p>Retirement Insurance</p>
-                <span class="deduction">%</span>
-                <span class="amount">$</span>
+                <input type="number" value="0" id="retirement-insurance">
+                <input type="number" value="0" class="money">
             </div>
             <div class="medical-insurance">
                 <p>Medical Insurance</p>
-                <span class="deduction">%</span>
-                <span class="amount">$</span>
+                <input type="number" value="0" id="medical-insurance">
+                <input type="number" value="0" class="money">
             </div>
         </section>
-        <section class="housing-payment info-box">
+        <section class="housing-payment info-box half-width">
             <h2>How much of a house payment can you afford?</h2>
             <img id="house-image" src="/images/jimmy-conover-dvurMDsj09Y-unsplash.jpg" alt="aerial view of neighborhood during daytime">
         </section>
@@ -77,7 +77,6 @@
     <footer>
         Copyright &copy; 2023. The Center for Advanced Research and Technology.
     </footer>
-    <script src="./scripts/career-data.js" type="module"></script>
-    <script src="./scripts/display.js"> type="module"</script>
+    <script src="./scripts/script.js"></script>
 </body>
 </html>
