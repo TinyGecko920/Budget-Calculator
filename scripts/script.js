@@ -71,3 +71,13 @@ const careers = [
     [ 'Welder/Metal Specialist', 47250 ],
     [ 'Wind Energy Technician', 56700 ]
 ]
+
+const deducitons = [
+    [ "Federal Taxes", 0.12, "%" ],
+    [ "State Taxes", 0.07, "%"],
+    [ "Social Security", 0.062, "%" ],
+    [ "Medicare", 0.0145, "%" ],
+    [ "State Disability", 0.01, "%" ],
+    [ "Retirement Investment", 0.05, "%" ]
+    [ "Medical Insurance", 180, "-" ],
+]
