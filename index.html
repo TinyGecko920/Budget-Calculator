@@ -13,56 +13,65 @@
     </header>
     <main>
         <section class="career-info info-box half-width">
-            <div class="selected-career">
-                <p>Selected Career:</p>
-                <input type="text" value="Career" id="selected-career" readonly>
-            </div>
-            <div class="gross-annual-income">
-                <p>Gross Annual Income:</p>
-                <input type="number" value="0" id="gross-annual-income">
-            </div>
-            <div class="gross-monthly-income">
-                <p>Gross Montly Income:</p>
-                <input type="number" value="0" id="gross-monthly-income">
-            </div>
+            <table class="two-columns">
+                <tr id="selected-career">
+                    <td>Selected Career</td>
+                    <td id="careerData">0</td>
+                </tr>
+                <tr id="gross-annual-income">
+                    <td>Gross Annual Income</td>
+                    <td class="gai data">0</td>
+                </tr>
+                <tr id="gross-monthly-income">
+                    <td>Gross Monthly Income</td>
+                    <td class="gmi data">0</td>
+                </tr>
+            </table>
         </section>
         <section class="pay-period-deductions info-box half-width">
             <h2>Pay Period Deductions</h2>
-            <div class="federal-taxes">
-                <p>Federal Taxes</p>
-                <input type="number" value="0" id="federal-taxes">
-                <input type="number" value="0" class="money">
-            </div>
-            <div class="state-taxes">
-                <p>State Taxes</p>
-                <input type="number" value="0" id="state-taxes">
-                <input type="number" value="0" class="money">
-            </div>
-            <div class="social-security">
-                <p>Social Security</p>
-                <input type="number" value="0" id="social-security">
-                <input type="number" value="0" class="money">
-            </div>
-            <div class="medicare">
-                <p>Medicare</p>
-                <input type="number" value="0" id="medicare">
-                <input type="number" value="0" class="money">
-            </div>
-            <div class="state-disability">
-                <p>State Disability</p>
-                <input type="number" value="0" id="state-disability">
-                <input type="number" value="0" class="money">
-            </div>
-            <div class="retirement-insurance">
-                <p>Retirement Insurance</p>
-                <input type="number" value="0" id="retirement-insurance">
-                <input type="number" value="0" class="money">
-            </div>
-            <div class="medical-insurance">
-                <p>Medical Insurance</p>
-                <input type="number" value="0" id="medical-insurance">
-                <input type="number" value="0" class="money">
-            </div>
+            <table class="three-columns">
+                <tr class="table-header">
+                    <th>Title</th>
+                    <th>Deduction</th>
+                    <th>Balance</th>
+                </tr>
+                <tr id="federal-taxes">
+                    <td class="deduction-title data">Federal Taxes</td>
+                    <td class="deduction-amount data"></td>
+                    <td class="balance data"></td>
+                </tr>
+                <tr id="state-taxes">
+                    <td class="deduction-title data">State Taxes</td>
+                    <td class="deduction-amount data"></td>
+                    <td class="balance data"></td>
+                </tr>
+                <tr id="social-security">
+                    <td class="deduction-title data">Social Security</td>
+                    <td class="deduction-amount data"></td>
+                    <td class="balance data"></td>
+                </tr>
+                <tr id="medicare">
+                    <td class="deduction-title data">Medicare</td>
+                    <td class="deduction-amount data"></td>
+                    <td class="balance data"></td>
+                </tr>
+                <tr id="state-disability">
+                    <td class="deduction-title data">State Disability</td>
+                    <td class="deduction-amount data"></td>
+                    <td class="balance data"></td>
+                </tr>
+                <tr id="retirement-insurance">
+                    <td class="deduction-title data">Retirement Insurance</td>
+                    <td class="deduction-amount data"></td>
+                    <td class="balance data"></td>
+                </tr>
+                <tr id="medical-insurance">
+                    <td class="deduction-title data">Medical Insurance</td>
+                    <td class="deduction-amount data"></td>
+                    <td class="balance data"></td>
+                </tr>
+            </table>
         </section>
         <section class="housing-payment info-box half-width">
             <h2>How much of a house payment can you afford?</h2>

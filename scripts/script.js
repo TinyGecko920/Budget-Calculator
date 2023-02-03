@@ -124,24 +124,23 @@ function calculate(a, b, operator) {
     }
  }
 
- function test(careerName) {
-    console.log("clicked anchor")
-    selectedCareer.value = careerName
-
+ function updateData(careerName) {
+    selectedCareer.getElementById
+    // selectedCareer.innerText = careerName
     for(let career of careers) {
         if(career[0] == careerName) {
             let gmi = calculate(career[1], 12, "divide");
 
-            grossAnnualIncome.value = career[1];
-            grossMonthlyIncome.value = gmi;
+            grossAnnualIncome.innerText = career[1];
+            grossMonthlyIncome.innerText = gmi;
 
-            federalTaxes.value = gmi - calculate(gmi, 0.12, "multiply");
-            stateTaxes.value = gmi - calculate(gmi, 0.07, "multiply");
-            socialSecurity.value = gmi - calculate(gmi, 0.062, "multiply");
-            medicare.value = gmi - calculate(gmi, 0.0145, "multiply");
-            stateDisability.value = gmi - calculate(gmi, 0.01, "multiply");
-            retirementInsurance.value = gmi - calculate(gmi, 0.05, "multiply");
-            medicalInsurance.value = gmi - calculate(gmi, 180, "subtract");
+            gmi = calculate(gmi, calculate(gmi, 0.12, "multiply"), "subtract"); federalTaxes.innerText = gmi;
+            gmi = calculate(gmi, calculate(gmi, 0.07, "multiply"), "subtract"); stateTaxes.innerText = gmi;
+            gmi = calculate(gmi, calculate(gmi, 0.062, "multiply"), "subtract"); socialSecurity.innerText = gmi;
+            gmi = calculate(gmi, calculate(gmi, 0.0145, "multiply"), "subtract"); medicare.innerText = gmi;
+            gmi = calculate(gmi, calculate(gmi, 0.01, "multiply"), "subtract"); stateDisability.innerText = gmi;
+            gmi = calculate(gmi, calculate(gmi, 0.05, "multiply"), "subtract"); retirementInsurance.innerText = gmi;
+            gmi = calculate(gmi, 180, "subtract"); medicalInsurance.innerText = gmi;
         }
     }
  }
@@ -156,5 +155,5 @@ for(let career of careers) {
     listItem.className = "listItem";
     listItem.id = career[0];
 
-    listItem.addEventListener('click', function() {test(career[0]); }, true);
+    listItem.addEventListener('click', function() {updateData(career[0]); }, true);
 }
