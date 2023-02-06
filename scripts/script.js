@@ -121,18 +121,18 @@ function updateData(careerName) {
         if(career[0] == careerName) {
             let gmi = calculate(career[1], 12, "divide");
 
-            grossAnnualIncome.innerText = `$${career[1]}`;
-            grossMonthlyIncome.innerText = `$${gmi}`;
-            grossMonthlyForHouse.innerText = `$${gmi}`;
+            grossAnnualIncome.innerText = `$${career[1].toFixed(2)}`;
+            grossMonthlyIncome.innerText = `$${gmi.toFixed(2)}`;
+            grossMonthlyForHouse.innerText = `$${gmi.toFixed(2)}`;
             maxHousePayment.innerText = `$${calculate(gmi, 0.33, "multiply")}`;
 
-            gmi = calculate(gmi, calculate(gmi, 0.12, "multiply"), "subtract"); federalTaxes.innerText = `$${gmi}`;
-            gmi = calculate(gmi, calculate(gmi, 0.07, "multiply"), "subtract"); stateTaxes.innerText = `$${gmi}`;
-            gmi = calculate(gmi, calculate(gmi, 0.062, "multiply"), "subtract"); socialSecurity.innerText = `$${gmi}`;
-            gmi = calculate(gmi, calculate(gmi, 0.0145, "multiply"), "subtract"); medicare.innerText = `$${gmi}`;
-            gmi = calculate(gmi, calculate(gmi, 0.01, "multiply"), "subtract"); stateDisability.innerText = `$${gmi}`;
-            gmi = calculate(gmi, calculate(gmi, 0.05, "multiply"), "subtract"); retirementInsurance.innerText = `$${gmi}`;
-            gmi = calculate(gmi, 180, "subtract"); medicalInsurance.innerText = `$${gmi}`;
+            gmi = calculate(gmi, calculate(gmi, 0.12, "multiply"), "subtract"); federalTaxes.innerText = `$${gmi.toFixed(2)}`;
+            gmi = calculate(gmi, calculate(gmi, 0.07, "multiply"), "subtract"); stateTaxes.innerText = `$${gmi.toFixed(2)}`;
+            gmi = calculate(gmi, calculate(gmi, 0.062, "multiply"), "subtract"); socialSecurity.innerText = `$${gmi.toFixed(2)}`;
+            gmi = calculate(gmi, calculate(gmi, 0.0145, "multiply"), "subtract"); medicare.innerText = `$${gmi.toFixed(2)}`;
+            gmi = calculate(gmi, calculate(gmi, 0.01, "multiply"), "subtract"); stateDisability.innerText = `$${gmi.toFixed(2)}`;
+            gmi = calculate(gmi, calculate(gmi, 0.05, "multiply"), "subtract"); retirementInsurance.innerText = `$${gmi.toFixed(2)}`;
+            gmi = calculate(gmi, 180, "subtract"); medicalInsurance.innerText = `$${gmi.toFixed(2)}`;
         }
     }
  }
