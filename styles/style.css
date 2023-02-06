@@ -9,6 +9,10 @@
 .full-width { width: 100%; }
 .half-width { width: 45%; }
 
+.text-align-center { text-align: center; }
+.text-align-left { text-align: left; }
+.text-align-right { text-align: right; }
+
 h1 {
     font-size: 2rem;
     margin-left: 1vw;
@@ -29,13 +33,13 @@ main {
     flex-wrap: wrap;
     float: right;
     padding: 5vh 5vw;
-    width: 90%;
+    width: 80%;
 }
 
 aside {
     background-color: #E8F3FC;
     color: #4B4545;
-    width: 10%;
+    width: 20%;
 }
 
 footer {
@@ -50,6 +54,7 @@ footer {
     flex-direction: column;
     margin-bottom: 5vh;
     padding: 2vh 2vw;
+    width: 100%;
 }
 
 .info-box div, .info-box h2 {
@@ -64,21 +69,17 @@ footer {
 
 .info-box h2 {
     color: #0055A5;
-}
-
-.info-box input {
-    background-color: #FFFFFF;
-    border: rgba(0, 0, 0, 20%) 1px solid;
-    display: inline-block;
-    height: 100%;
+    font-size: 2.5rem;
+    text-align: center;
 }
 
 .info-box p {
     color: #4B4545;
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
 
 #career-list {
+    max-height: 150vh;
     list-style: none;
     overflow: hidden;
     overflow-y: scroll;
@@ -89,6 +90,16 @@ footer {
     margin: 0.75vh 0.5vw 0 0.5vw;
 }
 
+#career-list li {
+    text-decoration: underline;
+}
+
+#career-list li:hover,
+#career-list li:focus {
+    color: blue;
+    font-weight: 600;
+}
+
 .search-bar {
     background-color: white;
     border: rgba(0, 0, 0, 20%) 1px solid;
@@ -96,7 +107,49 @@ footer {
     width: 80%;
 }
 
+tr, th, td {
+    outline: #646464 2px solid;
+    font-size: 1.5rem;
+    padding: 1vh 1vw;
+}
+
 #house-image {
+    align-items: center;
+    background-image: url(/images/jimmy-conover-dvurMDsj09Y-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: rgba(0, 0, 0, 20%) 1px solid;
+    display: flex;
     height: 40vh;
-    object-fit: cover;
+    justify-content: center;
+}
+
+table[class*="max-house-payment"] {
+    background-color: rgba(0, 0, 0, 50%);
+    border: rgba(255, 255, 255, 50%) 3px solid;
+    color: white;
+    width: 70%;
+}
+
+table[class*="max-house-payment"] tr,
+table[class*="max-house-payment"] th,
+table[class*="max-house-payment"] td {
+    font-size: 3rem;
+    outline: none;
+}
+
+@media only screen and (max-width: 1200px) {
+    #career-list li {
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .info-box h2 {
+        font-size: 1.5rem;
+    }
+    tr, th, td {
+        font-size: 1rem;
+    }
 }

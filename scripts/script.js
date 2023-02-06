@@ -43,16 +43,16 @@ const careers = [
     [ 'Investment Analyst', 66150 ],
     [ 'Lab Technician', 42000 ],
     [ 'Landscaper Horticulture', 48300 ],
-    [ 'lawyer', 86100 ],
+    [ 'Lawyer', 86100 ],
     [ 'Marketing/Sales Manager', 58800 ],
     [ 'Media/Communications', 45150 ],
     [ 'Medical RepairTech.', 52500 ],
     [ 'Military', 55650 ],
     [ 'Nurse', 66150 ],
-    [ 'Nutitionist', 45150 ],
+    [ 'Nutritionist', 45150 ],
     [ 'Oceanographer', 69300 ],
     [ 'Pastor', 50400 ],
-    [ 'PGBEATT Technician', 78750 ],
+    [ 'PG&E/AT&T Technician', 78750 ],
     [ 'Pharmacist', 105000 ],
     [ 'Photographer', 45150 ],
     [ 'Physical Therapist', 72450 ],
@@ -62,7 +62,7 @@ const careers = [
     [ 'Principal', 93450 ],
     [ 'Probation Officer', 44100 ],
     [ 'Psychologist', 77700 ],
-    [ 'Retail Sales Associate', 34650 ],
+    [ 'Retail Sales Associate For Target But Only On Sundays, Mondays, and Thursday', 34650 ],
     [ 'Social Worker', 50400 ],
     [ 'Solar Energy Tech.', 53550 ],
     [ 'Teacher', 52500 ],
@@ -72,29 +72,19 @@ const careers = [
     [ 'Wind Energy Technician', 56700 ]
 ]
 
-const deducitons = [
-    [ "Federal Taxes", 0.12, "%" ],
-    [ "State Taxes", 0.07, "%"],
-    [ "Social Security", 0.062, "%" ],
-    [ "Medicare", 0.0145, "%" ],
-    [ "State Disability", 0.01, "%" ],
-    [ "Retirement Investment", 0.05, "%" ],
-    [ "Medical Insurance", 180, "-" ],
-]
-
 const careerList = document.getElementById("career-list");
-
-const selectedCareer = document.getElementById("selected-career");
-const grossAnnualIncome = document.getElementById("gross-annual-income");
-const grossMonthlyIncome = document.getElementById("gross-monthly-income");
-
-const federalTaxes = document.getElementById("federal-taxes");
-const stateTaxes = document.getElementById("state-taxes");
-const socialSecurity = document.getElementById("social-security");
-const medicare = document.getElementById("medicare");
-const stateDisability = document.getElementById("state-disability");
-const retirementInsurance = document.getElementById("retirement-insurance");
-const medicalInsurance = document.getElementById("medical-insurance");
+const selectedCareer = document.getElementById("career-data");
+const grossAnnualIncome = document.getElementById("gai-data");
+const grossMonthlyIncome = document.getElementById("gmi-data");
+const grossMonthlyForHouse = document.getElementById("gmi-for-house");
+const maxHousePayment = document.getElementById("max-house-payment");
+const federalTaxes = document.getElementById("federal-tax-data");
+const stateTaxes = document.getElementById("state-tax-data");
+const socialSecurity = document.getElementById("social-security-data");
+const medicare = document.getElementById("medicare-data");
+const stateDisability = document.getElementById("state-disability-data");
+const retirementInsurance = document.getElementById("retirement-insurance-data");
+const medicalInsurance = document.getElementById("medical-insurance-data");
 
 // Calculator (add, subtract, multiply, divide)
 function calculate(a, b, operator) {
@@ -124,23 +114,25 @@ function calculate(a, b, operator) {
     }
  }
 
- function updateData(careerName) {
-    selectedCareer.getElementById
-    // selectedCareer.innerText = careerName
+// Calculate deductions and update table data
+function updateData(careerName) {
+    selectedCareer.innerText = careerName;
     for(let career of careers) {
         if(career[0] == careerName) {
             let gmi = calculate(career[1], 12, "divide");
 
-            grossAnnualIncome.innerText = career[1];
-            grossMonthlyIncome.innerText = gmi;
+            grossAnnualIncome.innerText = `$${career[1]}`;
+            grossMonthlyIncome.innerText = `$${gmi}`;
+            grossMonthlyForHouse.innerText = `$${gmi}`;
+            maxHousePayment.innerText = `$${calculate(gmi, 0.33, "multiply")}`;
 
-            gmi = calculate(gmi, calculate(gmi, 0.12, "multiply"), "subtract"); federalTaxes.innerText = gmi;
-            gmi = calculate(gmi, calculate(gmi, 0.07, "multiply"), "subtract"); stateTaxes.innerText = gmi;
-            gmi = calculate(gmi, calculate(gmi, 0.062, "multiply"), "subtract"); socialSecurity.innerText = gmi;
-            gmi = calculate(gmi, calculate(gmi, 0.0145, "multiply"), "subtract"); medicare.innerText = gmi;
-            gmi = calculate(gmi, calculate(gmi, 0.01, "multiply"), "subtract"); stateDisability.innerText = gmi;
-            gmi = calculate(gmi, calculate(gmi, 0.05, "multiply"), "subtract"); retirementInsurance.innerText = gmi;
-            gmi = calculate(gmi, 180, "subtract"); medicalInsurance.innerText = gmi;
+            gmi = calculate(gmi, calculate(gmi, 0.12, "multiply"), "subtract"); federalTaxes.innerText = `$${gmi}`;
+            gmi = calculate(gmi, calculate(gmi, 0.07, "multiply"), "subtract"); stateTaxes.innerText = `$${gmi}`;
+            gmi = calculate(gmi, calculate(gmi, 0.062, "multiply"), "subtract"); socialSecurity.innerText = `$${gmi}`;
+            gmi = calculate(gmi, calculate(gmi, 0.0145, "multiply"), "subtract"); medicare.innerText = `$${gmi}`;
+            gmi = calculate(gmi, calculate(gmi, 0.01, "multiply"), "subtract"); stateDisability.innerText = `$${gmi}`;
+            gmi = calculate(gmi, calculate(gmi, 0.05, "multiply"), "subtract"); retirementInsurance.innerText = `$${gmi}`;
+            gmi = calculate(gmi, 180, "subtract"); medicalInsurance.innerText = `$${gmi}`;
         }
     }
  }
@@ -151,9 +143,7 @@ for(let career of careers) {
     const listItem = document.createElement("li");
     listItem.innerText = career[0];
     careerList.appendChild(listItem);
-
     listItem.className = "listItem";
     listItem.id = career[0];
-
     listItem.addEventListener('click', function() {updateData(career[0]); }, true);
 }

@@ -12,23 +12,23 @@
         <h1>Budget Calculator</h1>
     </header>
     <main>
-        <section class="career-info info-box half-width">
+        <section class="career-info info-box">
             <table class="two-columns">
                 <tr id="selected-career">
                     <td>Selected Career</td>
-                    <td id="careerData">0</td>
+                    <td class="text-align-right" id="career-data">SELECT A CAREER</td>
                 </tr>
                 <tr id="gross-annual-income">
                     <td>Gross Annual Income</td>
-                    <td class="gai data">0</td>
+                    <td class="text-align-right" id="gai-data">$0</td>
                 </tr>
                 <tr id="gross-monthly-income">
                     <td>Gross Monthly Income</td>
-                    <td class="gmi data">0</td>
+                    <td class="text-align-right" id="gmi-data">$0</td>
                 </tr>
             </table>
         </section>
-        <section class="pay-period-deductions info-box half-width">
+        <section class="pay-period-deductions info-box">
             <h2>Pay Period Deductions</h2>
             <table class="three-columns">
                 <tr class="table-header">
@@ -38,44 +38,52 @@
                 </tr>
                 <tr id="federal-taxes">
                     <td class="deduction-title data">Federal Taxes</td>
-                    <td class="deduction-amount data"></td>
-                    <td class="balance data"></td>
+                    <td class="text-align-right" id="federal-tax-deduction">12% =</td>
+                    <td class="text-align-right" id="federal-tax-data">$0</td>
                 </tr>
                 <tr id="state-taxes">
                     <td class="deduction-title data">State Taxes</td>
-                    <td class="deduction-amount data"></td>
-                    <td class="balance data"></td>
+                    <td class="text-align-right" id="state-tax-deduction">7% =</td>
+                    <td class="text-align-right" id="state-tax-data">$0</td>
                 </tr>
                 <tr id="social-security">
                     <td class="deduction-title data">Social Security</td>
-                    <td class="deduction-amount data"></td>
-                    <td class="balance data"></td>
+                    <td class="text-align-right" id="social-security-deduction">6.2% =</td>
+                    <td class="text-align-right" id="social-security-data">$0</td>
                 </tr>
                 <tr id="medicare">
                     <td class="deduction-title data">Medicare</td>
-                    <td class="deduction-amount data"></td>
-                    <td class="balance data"></td>
+                    <td class="text-align-right" id="medicare-deduction">1.45% =</td>
+                    <td class="text-align-right" id="medicare-data">$0</td>
                 </tr>
                 <tr id="state-disability">
                     <td class="deduction-title data">State Disability</td>
-                    <td class="deduction-amount data"></td>
-                    <td class="balance data"></td>
+                    <td class="text-align-right" id="state=disability-deduction">1% =</td>
+                    <td class="text-align-right" id="state-disability-data">$0</td>
                 </tr>
                 <tr id="retirement-insurance">
                     <td class="deduction-title data">Retirement Insurance</td>
-                    <td class="deduction-amount data"></td>
-                    <td class="balance data"></td>
+                    <td class="text-align-right" id="reitrement-insurance-deduction">5% =</td>
+                    <td class="text-align-right" id="retirement-insurance-data">$0</td>
                 </tr>
                 <tr id="medical-insurance">
                     <td class="deduction-title data">Medical Insurance</td>
-                    <td class="deduction-amount data"></td>
-                    <td class="balance data"></td>
+                    <td class="text-align-right" id="medical-insurance-deduction">- $180 =</td>
+                    <td class="text-align-right" id="medical-insurance-data">$0</td>
                 </tr>
             </table>
         </section>
-        <section class="housing-payment info-box half-width">
+        <section class="housing-payment info-box">
             <h2>How much of a house payment can you afford?</h2>
-            <img id="house-image" src="/images/jimmy-conover-dvurMDsj09Y-unsplash.jpg" alt="aerial view of neighborhood during daytime">
+            <div id="house-image">
+                <table class="max-house-payment three-columns">
+                    <tr id="max-monthly-house-payment">
+                        <td id="gmi-for-house">$0</td>
+                        <td class="text-align-right" id="max-house-deduction">33% =</td>
+                        <td class="text-align-right" id="max-house-payment">$0</td>
+                    </tr>
+                </table>
+            </div>
         </section>
     </main>
     <aside>
