@@ -118,6 +118,18 @@ function calculate(a, b, operator) {
 // Calculate deductions and update table data
 function updateData(careerName) {
     selectedCareer.innerText = careerName;
+
+    if(careerName == "Cow") {
+        document.body.style.backgroundImage = "url(/images/textures/360_F_354133486_oFYpkrFUNHVJv2PHdy55PxA7NeOjNqN2.jpg)"
+        document.body.style.backgroundRepeat = "repeat"
+        document.body.style.backfaceVisibility = 0.5
+        let moo = new Audio("sounds/mooing-cow-122255.mp3")
+        moo.volume = 1
+        moo.play()
+    } else {
+        document.body.style.backgroundImage = ""
+    }
+
     for(let career of careers) {
         if(career[0] == careerName) {
             let gmi = calculate(career[1], 12, "divide");
