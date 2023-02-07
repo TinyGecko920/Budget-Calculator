@@ -13,7 +13,7 @@
     </header>
     <main>
         <section class="career-info info-box">
-            <table class="two-columns">
+            <table>
                 <tr id="selected-career">
                     <td>Selected Career</td>
                     <td class="text-align-right" id="career-data">SELECT A CAREER</td>
@@ -30,7 +30,7 @@
         </section>
         <section class="pay-period-deductions info-box">
             <h2>Pay Period Deductions</h2>
-            <table class="three-columns">
+            <table>
                 <tr class="table-header">
                     <th>Title</th>
                     <th>Deduction</th>
@@ -84,6 +84,20 @@
                     </tr>
                 </table>
             </div>
+        </section>
+        <section class="checkbook info-box">
+            <h2>Practice balancing a checkbook:</h2>
+            <table id="checkbook-table">
+                <tbody id="checkbook-tablebody">
+                    <tr class="table-header">
+                        <th>Transaction Description</th>
+                        <th>Payment, Fee, Withdrawal (-)</th>
+                        <th>Deposit Credit</th>
+                        <th>Balance</th>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="add-row">Add Row</div>
         </section>
     </main>
     <aside>

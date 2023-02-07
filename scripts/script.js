@@ -86,6 +86,8 @@ const medicare = document.getElementById("medicare-data");
 const stateDisability = document.getElementById("state-disability-data");
 const retirementInsurance = document.getElementById("retirement-insurance-data");
 const medicalInsurance = document.getElementById("medical-insurance-data");
+const addRow = document.getElementById("add-row");
+const checkbookTableBody = document.getElementById("checkbook-tablebody")
 
 // Calculator (add, subtract, multiply, divide)
 function calculate(a, b, operator) {
@@ -119,6 +121,7 @@ function calculate(a, b, operator) {
 function updateData(careerName) {
     selectedCareer.innerText = careerName;
 
+    // Mooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
     if(careerName == "Cow") {
         document.body.style.backgroundImage = "url(/images/textures/360_F_354133486_oFYpkrFUNHVJv2PHdy55PxA7NeOjNqN2.jpg)"
         document.body.style.backgroundRepeat = "repeat"
@@ -150,9 +153,8 @@ function updateData(careerName) {
     }
  }
 
-// Listing careers on page
+ // Listing careers on page
 for(let career of careers) {
-    console.log(career[0]);
     const listItem = document.createElement("li");
     listItem.innerText = career[0];
     careerList.appendChild(listItem);
@@ -160,3 +162,16 @@ for(let career of careers) {
     listItem.id = career[0];
     listItem.addEventListener('click', function() {updateData(career[0]); }, true);
 }
+
+function addRowToCheckbook() {
+    let newRow = checkbookTableBody.insertRow(-1);
+    for(let i = 0; i < 4; i++) {
+        let newCell = newRow.insertCell(0);
+        newCell.innerText = "test"
+        newCell.
+    }
+
+    console.log("cow");
+}
+
+addRow.addEventListener('click', function() {addRowToCheckbook()}, true);

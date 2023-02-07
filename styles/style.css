@@ -58,7 +58,7 @@ footer {
 }
 
 .info-box div, .info-box h2 {
-    margin-bottom: 1vh;
+    margin-bottom: 2vh;
 }
 
 .info-box div {
@@ -137,6 +137,11 @@ table[class*="max-house-payment"] th,
 table[class*="max-house-payment"] td {
     font-size: 3rem;
     outline: none;
+}
+
+#add-row {
+    background-color: #0054A4;
+    color: white;
 }
 
 @media only screen and (max-width: 1200px) {
