@@ -20,6 +20,7 @@ const careers = [
     [ 'Conserv./Environ. Science', 72450 ],
     [ 'Correctional Officer', 48300 ],
     [ 'Cosmetologist', 36750 ],
+    [ 'Cow', 655 ],
     [ 'Credit Union/Bank Manager', 61950 ],
     [ 'Daycare Director', 37800 ],
     [ 'Dentist', 115500 ],
@@ -62,7 +63,7 @@ const careers = [
     [ 'Principal', 93450 ],
     [ 'Probation Officer', 44100 ],
     [ 'Psychologist', 77700 ],
-    [ 'Retail Sales Associate For Target But Only On Sundays, Mondays, and Thursday', 34650 ],
+    [ 'Retail Sales Associate', 34650 ],
     [ 'Social Worker', 50400 ],
     [ 'Solar Energy Tech.', 53550 ],
     [ 'Teacher', 52500 ],
@@ -124,7 +125,7 @@ function updateData(careerName) {
             grossAnnualIncome.innerText = `$${career[1].toFixed(2)}`;
             grossMonthlyIncome.innerText = `$${gmi.toFixed(2)}`;
             grossMonthlyForHouse.innerText = `$${gmi.toFixed(2)}`;
-            maxHousePayment.innerText = `$${calculate(gmi, 0.33, "multiply")}`;
+            maxHousePayment.innerText = `$${calculate(gmi, 0.33, "multiply").toFixed(2)}`;
 
             gmi = calculate(gmi, calculate(gmi, 0.12, "multiply"), "subtract"); federalTaxes.innerText = `$${gmi.toFixed(2)}`;
             gmi = calculate(gmi, calculate(gmi, 0.07, "multiply"), "subtract"); stateTaxes.innerText = `$${gmi.toFixed(2)}`;
