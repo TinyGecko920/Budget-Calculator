@@ -168,7 +168,6 @@ function addRowToCheckbook() {
     for(let i = 0; i < 4; i++) {
         let newCell = newRow.insertCell(0);
         newCell.innerText = "test"
-        newCell.
     }
 
     console.log("cow");
