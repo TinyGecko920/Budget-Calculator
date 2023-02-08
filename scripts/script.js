@@ -117,6 +117,8 @@ function calculate(a, b, operator) {
     }
  }
 
+ let gmi = 0;
+
 // Calculate deductions and update table data
 function updateData(careerName) {
     selectedCareer.innerText = careerName;
@@ -135,7 +137,7 @@ function updateData(careerName) {
 
     for(let career of careers) {
         if(career[0] == careerName) {
-            let gmi = calculate(career[1], 12, "divide");
+            gmi = calculate(career[1], 12, "divide");
 
             grossAnnualIncome.innerText = `$${career[1].toFixed(2)}`;
             grossMonthlyIncome.innerText = `$${gmi.toFixed(2)}`;
@@ -149,6 +151,9 @@ function updateData(careerName) {
             gmi = calculate(gmi, calculate(gmi, 0.01, "multiply"), "subtract"); stateDisability.innerText = `$${gmi.toFixed(2)}`;
             gmi = calculate(gmi, calculate(gmi, 0.05, "multiply"), "subtract"); retirementInsurance.innerText = `$${gmi.toFixed(2)}`;
             gmi = calculate(gmi, 180, "subtract"); medicalInsurance.innerText = `$${gmi.toFixed(2)}`;
+
+            const checkbookGMI = document.getElementsByClassName("checkbook-gmi")
+            checkbookGMI.innerHTML = `$${gmi.toFixed(2)}`
         }
     }
  }
@@ -166,11 +171,29 @@ for(let career of careers) {
 function addRowToCheckbook() {
     let newRow = checkbookTableBody.insertRow(-1);
     for(let i = 0; i < 4; i++) {
-        let newCell = newRow.insertCell(0);
-        newCell.innerText = "test"
+        let newCell = newRow.insertCell(-1);
+        switch(i) {
+            /*
+                0 = Transaction Description
+                1 = Payment, Fee, Withdrawal (-)
+                2 = Deposit Credit (+)
+                3 = Balance
+            */
+            case 0:
+                newCell.innerHTML = (`<input class="checkbook-input" type="text" placeholder="Transaction">`);
+                break;
+            case 1:
+            case 2:
+                newCell.innerHTML = (`<input class="checkbook-input" type="text" placeholder="$0.00">`);
+                break;                
+            case 3:
+                newCell.className = "checkbook-gmi"
+                newCell.innerHTML = (`$${gmi.toFixed(2)}`);
+                break;
+            default:
+                newCell.innerHTML = (`<input class="checkbook-input" type="text" placeholder="---">`);
+        }
     }
-
-    console.log("cow");
 }
 
 addRow.addEventListener('click', function() {addRowToCheckbook()}, true);
