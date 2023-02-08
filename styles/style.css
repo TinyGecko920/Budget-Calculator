@@ -79,7 +79,8 @@ footer {
 }
 
 #career-list {
-    max-height: 150vh;
+    background-color: #E8F3FC;
+    min-height: 100vh;
     list-style: none;
     overflow: hidden;
     overflow-y: scroll;

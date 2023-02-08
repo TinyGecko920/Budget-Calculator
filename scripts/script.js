@@ -153,7 +153,7 @@ function updateData(careerName) {
             gmi = calculate(gmi, 180, "subtract"); medicalInsurance.innerText = `$${gmi.toFixed(2)}`;
 
             const checkbookGMI = document.getElementsByClassName("checkbook-gmi")
-            checkbookGMI.innerHTML = `$${gmi.toFixed(2)}`
+            checkbookGMI.innerText = `$${gmi.toFixed(2)}`
         }
     }
  }
