@@ -1,2 +1,4 @@
 # Budget-Calculator
-EECU Budget Calculator Project
+Budget Calculator Project for CART
+
+*Also there is cows*
