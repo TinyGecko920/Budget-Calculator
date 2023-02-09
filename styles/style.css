@@ -75,10 +75,9 @@ aside {
 }
 
 #career-list {
-    min-height: 100vh;
+    min-height: 200vh;
     list-style: none;
     overflow: hidden;
-    overflow-y: scroll;
 }
 
 aside h2 {
@@ -202,7 +201,7 @@ footer li:not(:last-child) {
         width: 100%;
     }
     aside {
-        background-color: white;
+        background: none;
         margin-bottom: 5vh;
         width: 100%;
     }
@@ -226,5 +225,23 @@ footer li:not(:last-child) {
     table[class*="max-house-payment"] th,
     table[class*="max-house-payment"] td {
         font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    tr, th, td {
+        font-size: 1rem;
+    }
+    .checkbook-input {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    tr, th, td {
+        font-size: 0.5rem;
+    }
+    .checkbook-input {
+        font-size: 0.5rem;
     }
 }

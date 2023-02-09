@@ -125,14 +125,14 @@ function updateData(careerName) {
 
     // Mooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
     if(careerName == "Cow") {
-        document.body.style.backgroundImage = "url(/images/textures/360_F_354133486_oFYpkrFUNHVJv2PHdy55PxA7NeOjNqN2.jpg)"
-        document.body.style.backgroundRepeat = "repeat"
-        document.body.style.backfaceVisibility = 0.5
-        let moo = new Audio("sounds/mooing-cow-122255.mp3")
-        moo.volume = 1
-        moo.play()
+        document.body.style.backgroundImage = "url(/images/textures/360_F_354133486_oFYpkrFUNHVJv2PHdy55PxA7NeOjNqN2.jpg)";
+        document.body.style.backgroundRepeat = "repeat";
+        document.body.style.backfaceVisibility = 0.5;
+        let moo = new Audio("sounds/mooing-cow-122255.mp3");
+        moo.volume = 1;
+        moo.play();
     } else {
-        document.body.style.backgroundImage = ""
+        document.body.style.backgroundImage = "";
     }
 
     for(let career of careers) {
@@ -144,8 +144,8 @@ function updateData(careerName) {
             grossMonthlyForHouse.innerText = `$${gmi.toFixed(2)}`;
             maxHousePayment.innerText = `$${calculate(gmi, 0.33, "multiply").toFixed(2)}`;
 
-            let checkbookGMI = document.getElementById("checkbook-gmi")
-            checkbookGMI.innerHTML = `$${gmi.toFixed(2)}`
+            let initialCheckbookAmount = document.getElementById("initial-checkbook-amount")
+            initialCheckbookAmount.innerHTML = `$${gmi.toFixed(2)}`
 
             gmi = calculate(gmi, calculate(gmi, 0.12, "multiply"), "subtract"); federalTaxes.innerText = `$${gmi.toFixed(2)}`;
             gmi = calculate(gmi, calculate(gmi, 0.07, "multiply"), "subtract"); stateTaxes.innerText = `$${gmi.toFixed(2)}`;
@@ -165,9 +165,12 @@ for(let career of careers) {
     careerList.appendChild(listItem);
     listItem.className = "listItem";
     listItem.id = career[0];
-    listItem.addEventListener('click', function() {updateData(career[0]); }, true);
+    listItem.addEventListener('click', function() {
+        updateData(career[0]); 
+    }, true);
 }
 
+// Add rows to checkbook when add row button is pressed
 function addRowToCheckbook() {
     let newRow = checkbookTableBody.insertRow(-1);
     for(let i = 0; i < 4; i++) {
@@ -180,15 +183,32 @@ function addRowToCheckbook() {
                 3 = Balance
             */
             case 0:
+                newCell.className = "transaction-description"
                 newCell.innerHTML = (`<input class="checkbook-input" type="text" placeholder="Transaction">`);
                 break;
             case 1:
-            case 2:
+                newCell.className = "subtract-money"
                 newCell.innerHTML = (`<input class="checkbook-input" type="text" placeholder="$0.00">`);
+                newCell.addEventListener('change', function() {
+                    
+                    console.log("subtract amount")
+                }, true)
+                break;
+            case 2:
+                newCell.className = "add-money"
+                newCell.innerHTML = (`<input class="checkbook-input" type="text" placeholder="$0.00">`);
+                newCell.addEventListener('change', function() {
+                    console.log('add amount')
+                }, true)
                 break;                
             case 3:
-                newCell.id = "checkbook-gmi"
-                newCell.innerHTML = (`nil`);
+                newCell.className = "amount"
+                let initialCheckbookAmount = document.getElementById("initial-checkbook-amount")
+                initialCheckbookAmount.innerHTML = `$${gmi.toFixed(2)}`
+
+                newCell.innerHTML = "nil"
+                // add and subtract previous row values
+
                 break;
             default:
                 newCell.innerHTML = (`<input class="checkbook-input" type="text" placeholder="---">`);
@@ -196,4 +216,6 @@ function addRowToCheckbook() {
     }
 }
 
-addRow.addEventListener('click', function() {addRowToCheckbook()}, true);
+addRow.addEventListener('click', function() {
+    addRowToCheckbook()
+}, true);
