@@ -40,11 +40,7 @@ aside {
     background-color: #E8F3FC;
     color: #4B4545;
     width: 20%;
-}
-
-footer {
-    clear: both;
-    justify-content: center; 
+    height: 100%;
 }
 
 .info-box {
@@ -79,7 +75,6 @@ footer {
 }
 
 #career-list {
-    background-color: #E8F3FC;
     min-height: 100vh;
     list-style: none;
     overflow: hidden;
@@ -93,9 +88,6 @@ aside h2 {
 
 #career-list li {
     margin: 0.75vh 0.5vw 0 0.5vw;
-}
-
-#career-list li {
     text-decoration: underline;
 }
 
@@ -140,13 +132,18 @@ table[class*="max-house-payment"] {
 table[class*="max-house-payment"] tr,
 table[class*="max-house-payment"] th,
 table[class*="max-house-payment"] td {
-    font-size: 3rem;
+    font-size: 2.5rem;
     outline: none;
 }
 
 #add-row {
     background-color: #0054A4;
+    border-radius: 8px;
     color: white;
+    justify-content: center;
+    margin-top: 2vh;
+    padding: 8px 8px;
+    width: 10vw;
 }
 
 .checkbook-input {
@@ -161,17 +158,73 @@ table[class*="max-house-payment"] td {
     outline: none;
 }
 
+footer {
+    clear: both;
+    justify-content: center; 
+}
+
+footer ul {
+    list-style: none;
+    margin: 0;
+    text-align: center;
+}
+
+footer li:not(:last-child) {
+    margin-bottom: 1vh;
+}
+
 @media only screen and (max-width: 1200px) {
     #career-list li {
         font-size: 0.8rem;
     }
+    table[class*="max-house-payment"] {
+        width: 100%;
+        border: none;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #add-row {
+        font-size: 1.5rem;
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 800px) {
+    header {
+        display: flex;
+        justify-content: center;
+    }
+    h1 {
+        margin: 0;
+    }
+    main {
+        width: 100%;
+    }
+    aside {
+        background-color: white;
+        margin-bottom: 5vh;
+        width: 100%;
+    }
+    aside h2 {
+        font-size: 3rem;
+        text-align: center;
+    }
+    #career-list {
+        text-align: center;
+    }
+    #career-list li {
+        font-size: 1.5rem;
+    }
     .info-box h2 {
         font-size: 1.5rem;
     }
     tr, th, td {
         font-size: 1rem;
+    }
+    table[class*="max-house-payment"] tr,
+    table[class*="max-house-payment"] th,
+    table[class*="max-house-payment"] td {
+        font-size: 1.5rem;
     }
 }

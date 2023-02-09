@@ -144,6 +144,9 @@ function updateData(careerName) {
             grossMonthlyForHouse.innerText = `$${gmi.toFixed(2)}`;
             maxHousePayment.innerText = `$${calculate(gmi, 0.33, "multiply").toFixed(2)}`;
 
+            let checkbookGMI = document.getElementById("checkbook-gmi")
+            checkbookGMI.innerHTML = `$${gmi.toFixed(2)}`
+
             gmi = calculate(gmi, calculate(gmi, 0.12, "multiply"), "subtract"); federalTaxes.innerText = `$${gmi.toFixed(2)}`;
             gmi = calculate(gmi, calculate(gmi, 0.07, "multiply"), "subtract"); stateTaxes.innerText = `$${gmi.toFixed(2)}`;
             gmi = calculate(gmi, calculate(gmi, 0.062, "multiply"), "subtract"); socialSecurity.innerText = `$${gmi.toFixed(2)}`;
@@ -151,9 +154,6 @@ function updateData(careerName) {
             gmi = calculate(gmi, calculate(gmi, 0.01, "multiply"), "subtract"); stateDisability.innerText = `$${gmi.toFixed(2)}`;
             gmi = calculate(gmi, calculate(gmi, 0.05, "multiply"), "subtract"); retirementInsurance.innerText = `$${gmi.toFixed(2)}`;
             gmi = calculate(gmi, 180, "subtract"); medicalInsurance.innerText = `$${gmi.toFixed(2)}`;
-
-            const checkbookGMI = document.getElementsByClassName("checkbook-gmi")
-            checkbookGMI.innerText = `$${gmi.toFixed(2)}`
         }
     }
  }
@@ -187,8 +187,8 @@ function addRowToCheckbook() {
                 newCell.innerHTML = (`<input class="checkbook-input" type="text" placeholder="$0.00">`);
                 break;                
             case 3:
-                newCell.className = "checkbook-gmi"
-                newCell.innerHTML = (`$${gmi.toFixed(2)}`);
+                newCell.id = "checkbook-gmi"
+                newCell.innerHTML = (`nil`);
                 break;
             default:
                 newCell.innerHTML = (`<input class="checkbook-input" type="text" placeholder="---">`);
