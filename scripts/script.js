@@ -190,7 +190,7 @@ function addRowToCheckbook() {
                 newCell.className = "subtract-money"
                 newCell.innerHTML = (`<input class="checkbook-input" type="text" placeholder="$0.00">`);
                 newCell.addEventListener('change', function() {
-                    
+
                     console.log("subtract amount")
                 }, true)
                 break;
@@ -204,7 +204,6 @@ function addRowToCheckbook() {
             case 3:
                 newCell.className = "amount"
                 let initialCheckbookAmount = document.getElementById("initial-checkbook-amount")
-                initialCheckbookAmount.innerHTML = `$${gmi.toFixed(2)}`
 
                 newCell.innerHTML = "nil"
                 // add and subtract previous row values
